@@ -30,7 +30,7 @@ namespace Library
                 //match each needed component
                 //populae with your regex to match the format
 
-                Match match = Regex.Match(s, @"");
+                Match match = Regex.Match(s, @"^Type:\s*(.*),Title:\s*(.*),Length:\s*([\w ]*)$");
                 if (match.Success)
                 {
                     //populate each component with the values from your capture groups
@@ -44,9 +44,23 @@ namespace Library
                         //create a book object
                         //populate the book object with a title and length
                         //then add the newly created book to rentedMedia
+
+                        Book booksMedia = new Book("The Wolf Hunger", "500 pages");
+                        rentedMedia.Add(booksMedia);
+
                     }
                     //complete for the DVD and Magazine media types
-                        //implement
+                    //implement
+                    else if (type.Equals("DVD"))
+                    {
+                        DVD dvdMedia = new DVD("The Grudge", "2:00hrs");
+                        rentedMedia.Add(dvdMedia);
+                    }
+                    else if (type.Equals("Magazine"))
+                    {
+                        Magazine magMedia = new Magazine("Cosmo", "100 pages");
+                        rentedMedia.Add(magMedia);
+                    }
                 }
             }
 
