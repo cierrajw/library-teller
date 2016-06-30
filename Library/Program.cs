@@ -68,7 +68,8 @@ namespace Library
             foreach (Media mediaItem in rentedMedia)
             {
                 //for each mediaItem call PrintMediaDetails()
-                    //implement
+                //implement
+
             }
 
             //halt the program so we can read the output
