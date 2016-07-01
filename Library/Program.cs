@@ -19,13 +19,15 @@ namespace Library
 
             //populate mediaToRent with the values returned from getFile instead of an empty list e.g. "new List<string>();"
             //implement
-            List<string> mediaToRent = new List<string>();
-            
+            //List<string> mediaToRent = new List<string>();
+
+            List<string> mediaToRent = getFile.ReturnMediaFile(@"..\..\Media.txt");
+    
             //create a new list for us to use to store our media objects to rent
             List<Media> rentedMedia = new List<Media>();
 
             //for each line from the rental 
-            foreach (string s in mediaToRent)
+            foreach (string s in mediaToRent) //each string in the list of strings from the media file
             {
                 //match each needed component
                 //populae with your regex to match the format
@@ -45,7 +47,11 @@ namespace Library
                         //populate the book object with a title and length
                         //then add the newly created book to rentedMedia
 
-                        Book booksMedia = new Book("The Wolf Hunger", "500 pages");
+                        Book booksMedia = new Book(title, length); //Could put in the parenthesis if you create a constructor
+
+                        //OR YOU CAN DO IT THIS WAY:
+                        booksMedia.Title = title; //Populating book object with title and length
+                        booksMedia.Length = length;
                         rentedMedia.Add(booksMedia);
 
                     }
@@ -53,7 +59,7 @@ namespace Library
                     //implement
                     else if (type.Equals("DVD"))
                     {
-                        DVD dvdMedia = new DVD("The Grudge", "2:00hrs");
+                        DVD dvdMedia = new DVD(title, length);
                         rentedMedia.Add(dvdMedia);
                     }
                     else if (type.Equals("Magazine"))
@@ -69,7 +75,7 @@ namespace Library
             {
                 //for each mediaItem call PrintMediaDetails()
                 //implement
-
+                mediaItem.PrintMediaDetails();
             }
 
             //halt the program so we can read the output

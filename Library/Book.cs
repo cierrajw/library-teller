@@ -12,7 +12,7 @@ namespace Library
         {
             get
             {
-                return 7;
+                return 2;
             }
             set //dummy set method, don't do nuffin
             {
@@ -21,8 +21,8 @@ namespace Library
         }
         public Book(string Title, string Length)
         {
-
         }
+
         public override void PrintMediaDetails()
         {
             Console.WriteLine("Book {0} ({1})", Title, Length);

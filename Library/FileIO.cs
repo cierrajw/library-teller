@@ -27,23 +27,36 @@ namespace Library
                 string line;
 
                 //open a StreamReader to the file specifcied in the path variable 
+                //implement
+
+                using (StreamReader reader = new StreamReader(path))
+                {
+
+                    line = reader.ReadLine();
+
+                    while (line != null)
+                    {
+                        mediaFile.Add(line);
+                        line = reader.ReadLine();
+                    }
+                }
+                    //while reading a new from file, addd each line to mediaFile
+                    //as long as each new line is not null
                     //implement
 
-                //while reading a new from file, addd each line to mediaFile
-                //as long as each new line is not null
-                    //implement
 
-
-                //remember to close your file
-                //file.Close();
-            }
+                    //remember to close your file
+                    //file.Close();
+                }
             catch (FileNotFoundException)
             {
+                Console.WriteLine("File not found");
                 //write out appropriate message
                     //implement
             }
-            catch (Exception e)
+            catch (Exception e) //e is exception variable
             {
+                Console.WriteLine(e.Message);
                 //write out the message of e
                     //implement
             }

@@ -12,7 +12,7 @@ namespace Library
         {
             get
             {
-                return 7;
+                return 3;
             }
             set //dummy set method, don't do nuffin
             {
@@ -24,7 +24,7 @@ namespace Library
         }
         public override void PrintMediaDetails()
         {
-            Console.WriteLine("DVD {0} ({1})", Title, Length);
+            Console.WriteLine("Magazine {0} ({1})", Title, Length);
             Console.WriteLine("Rented on: {0}", RentedDate);
             Console.WriteLine("Due on: {0}", ReturnDueDate());
         }
